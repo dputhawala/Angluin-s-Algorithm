@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------------------
+In order to get a visual of the DFM created from the training data,
+you can use the StateList and TransList to make a DFM-by-numbers.
+
+States have the following format: [label, Start-Bool, Accepting-Bool]
+so [3, False, True], for example, is state number 3, which is not 
+ the start state, but is an end state.
+
+Transitions have the following format: [FromState, ToState, EmissionLetter]
+so [2, 4, 'a'], for example, is a directed transition from state 2 to state 4, with the emission 'a'
+
+---------------------------------------------------------------------------------------
+
+Canonical DFM State List: [[0, True, True], [1, False, False], [2, False, False], [3, False, False]]
+Canonical DFM Transition List: [[0, 1, 'a'], [1, 0, 'a'], [0, 2, 'b'], [2, 0, 'b'], [1, 3, 'b'], [3, 1, 'b'], [2, 3, 'a'], [3, 2, 'a']]
+---------------------------------------------------------------------------------------
+
+
+The following is the test data.  Each line is checked to see if it is in the language.
+The "True" or "False" after each line indicates if it is in the language or not.
+---------------------------------------------------------------------------------------
+
+aa  |  True
+bb  |  True
+aabb  |  True
+bbaaaaaabb  |  True
+bbbbbbbbaa  |  True
+ab  |  False
+ba  |  False
+abaa  |  False
+aaba  |  False
+babb  |  False
+bbab  |  False
+ababab  |  False
+bababa  |  False
+bbbaaa  |  False
+aaabbb  |  False
+aababb  |  False
+abbaba  |  False
+bbabaa  |  False
+babbaa  |  False
